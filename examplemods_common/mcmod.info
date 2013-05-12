@@ -1,0 +1,20 @@
+[
+{
+	"modid":"ExampleMods",
+	"name":"Example Mods",
+	"description":"A mod for testing examples.",
+	"version":"0.0.1",
+	"url":"http://arasaia.net/minecraft/modding/",
+	"updateUrl":"",
+	"authorList":[
+		"apollo"
+	],
+	"credits":"Thanks to the internets!",
+	"logoFile":"",
+	"screenshots":[
+	],
+	"parent":"",
+	"dependencies":[
+	]
+}
+]
