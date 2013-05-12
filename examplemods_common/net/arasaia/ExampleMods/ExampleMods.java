@@ -88,8 +88,7 @@ public class ExampleMods {
     }
     
     private void initializeItems(){
-        ingotExampleMod = (new IngotExampleMods(Reference.INGOT_ID))
-                .setUnlocalizedName("ingotExampleMod");
+        ingotExampleMod = new IngotExampleMods(Reference.INGOT_ID);
     }
     
     private void registerItems(){

@@ -19,6 +19,8 @@ public class IngotExampleMods extends ItemGeneralExampleMods{
     
     public IngotExampleMods(int id){
         super(id);
+        this.setUnlocalizedName("ingotExampleMods");
+        this.setCreativeTab(CreativeTabs.tabMaterials);
     }
     
     @SideOnly(Side.CLIENT)
@@ -46,7 +48,6 @@ public class IngotExampleMods extends ItemGeneralExampleMods{
     }
     
     @SideOnly(Side.CLIENT)
-    @Override
     public void getSubItems(int par1, CreativeTabs par2CreativeTabs, List par3List){
         for(int i = 0; i< Reference.INGOT_TOTAL; i++){
             par3List.add(new ItemStack(par1, 1, i));
