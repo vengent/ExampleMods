@@ -57,7 +57,7 @@ public class WorldGenExampleMod implements IWorldGenerator{
                 .generate(world, random, firstBlockXCoord, firstBlockYCoord, firstBlockZCoord);
             
             firstBlockXCoord = i + random.nextInt(16);
-            firstBlockYCoord = random.nextInt(128);
+            firstBlockYCoord = random.nextInt(Reference.ORE_SILVER_HEIGHT);
             firstBlockZCoord = j + random.nextInt(16);
         }
     }

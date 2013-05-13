@@ -19,7 +19,7 @@ public class ExampleModRecipes {
             .smelting()
             .addSmelting(
                 Reference.ORE_ID, 
-                Reference.INGOT_COPPER_META_ID, 
+                Reference.ORE_COPPER_META_ID, 
                 new ItemStack(
                         ExampleMods.ingotExampleMod, 
                         1, 
@@ -30,7 +30,7 @@ public class ExampleModRecipes {
         .smelting()
         .addSmelting(
             Reference.ORE_ID, 
-            Reference.INGOT_SILVER_META_ID, 
+            Reference.ORE_SILVER_META_ID, 
             new ItemStack(
                     ExampleMods.ingotExampleMod, 
                     1, 
