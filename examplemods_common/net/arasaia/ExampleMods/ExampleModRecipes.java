@@ -34,7 +34,7 @@ public class ExampleModRecipes {
                     ExampleMods.ingotExampleMod, 
                     1, 
                     Reference.INGOT_SILVER_META_ID), 
-            0.5F);
+            1.0F);
     }
 
     private static void addBuckets() {
