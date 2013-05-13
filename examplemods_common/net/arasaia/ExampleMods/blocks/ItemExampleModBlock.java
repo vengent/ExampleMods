@@ -29,6 +29,7 @@ public class ItemExampleModBlock extends ItemBlock{
         return super.getUnlocalizedName() + "." + name;
     }
     
+    @Override
     public int getMetadata(int par1){
         return par1;
     }
