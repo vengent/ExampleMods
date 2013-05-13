@@ -11,6 +11,7 @@ public class ExampleModRecipes {
     public static void addRecipes() {
         addFurnaceRecipes();
         addBuckets();
+        addPicks();
     }
 
     private static void addFurnaceRecipes() {
@@ -45,5 +46,15 @@ public class ExampleModRecipes {
         GameRegistry.addRecipe(new ShapedOreRecipe(Item.bucketEmpty, true,
                 new Object[] { "I I", " I ", Character.valueOf('I'),
                         "ingotSilver" }));
+    }
+    
+    private static void addPicks(){
+        GameRegistry.addRecipe(new ShapedOreRecipe(Item.pickaxeIron, true,
+                new Object[] { "III", " S ", " S ", Character.valueOf('I'),
+                        "ingotCopper", Character.valueOf('S'), Item.stick }));
+        
+        GameRegistry.addRecipe(new ShapedOreRecipe(Item.pickaxeGold, true,
+                new Object[] { "III", " S ", " S ", Character.valueOf('I'),
+                        "ingotSilver", Character.valueOf('S'), Item.stick }));
     }
 }

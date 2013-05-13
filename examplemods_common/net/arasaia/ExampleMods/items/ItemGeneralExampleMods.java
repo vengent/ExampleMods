@@ -17,9 +17,4 @@ public class ItemGeneralExampleMods extends Item{
         this.itemIcon = par1IconRegister.registerIcon(Reference.MOD_ID
                 + ":" + this.getUnlocalizedName().substring(5));
     }
-    
-    @Override
-    public int getMetadata(int par1){
-        return par1;
-    }
 }

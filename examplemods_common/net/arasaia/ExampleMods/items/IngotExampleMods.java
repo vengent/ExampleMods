@@ -14,6 +14,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class IngotExampleMods extends ItemGeneralExampleMods{
     @SideOnly(Side.CLIENT)
     private String[] ingotNames = new String[]{"copper","silver"};
+    @SideOnly(Side.CLIENT)
     private static String[] iconNames = new String[]{"ingotCopper", "ingotSilver"};
     
     @SideOnly(Side.CLIENT)
@@ -21,31 +22,20 @@ public class IngotExampleMods extends ItemGeneralExampleMods{
     
     public IngotExampleMods(int id){
         super(id);
+        this.setHasSubtypes(true);
         this.setUnlocalizedName("ingotExampleMods");
         this.setCreativeTab(CreativeTabs.tabMaterials);
     }
     
-    /*@SideOnly(Side.CLIENT)
-    public void registerIcons(IconRegister par1IconRegister){
-        icons = new Icon[Reference.INGOT_TOTAL];
-        
-        for(int i = 0; i < icons.length; i++){
-            icons[i] = 
-                    par1IconRegister.registerIcon(
-                            Reference.MOD_ID 
-                            + ":" 
-                            + (this.getUnlocalizedName().substring(5)) + i);
-        }
-    }*/
-    
     @SideOnly(Side.CLIENT)
+    @Override
     public void registerIcons(IconRegister par1IconRegister)
     {
         this.icons = new Icon[iconNames.length];
 
         for (int i = 0; i < iconNames.length; ++i)
         {
-            this.icons[i] = par1IconRegister.registerIcon(iconNames[i]);
+            this.icons[i] = par1IconRegister.registerIcon(Reference.MOD_ID + ":" + iconNames[i]);
         }
     }
     
@@ -66,10 +56,6 @@ public class IngotExampleMods extends ItemGeneralExampleMods{
     
     @SideOnly(Side.CLIENT)
     @Override
-    public int getMetadata(int par1){
-        return par1;
-    }
-    
     public String getUnlocalizedName(ItemStack par1ItemStack)
     {
         int i = MathHelper.clamp_int(par1ItemStack.getItemDamage(), 0, Reference.INGOT_TOTAL);

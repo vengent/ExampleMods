@@ -8,11 +8,17 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
+import net.minecraft.util.MathHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class OreExampleMods extends BlockGeneralExampleMods{
 
+    @SideOnly(Side.CLIENT)
+    private String[] oreNames = new String[]{"copper","silver"};
+    @SideOnly(Side.CLIENT)
+    private static String[] iconNames = new String[]{"oreCopper", "oreSilver"}; 
+    
     public OreExampleMods(int par1, Material par2Material) {
         super(par1, par2Material);
         this.setHardness(3.0F);
@@ -23,7 +29,7 @@ public class OreExampleMods extends BlockGeneralExampleMods{
     @SideOnly(Side.CLIENT)
     private Icon[] icons;
     
-    @SideOnly(Side.CLIENT)
+    /*@SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1IconRegister){
         icons = new Icon[Reference.ORE_PICKAXE_STONE_HARVEST_TOTAL];
         
@@ -31,6 +37,18 @@ public class OreExampleMods extends BlockGeneralExampleMods{
             icons[i] = par1IconRegister.registerIcon(Reference.MOD_ID
                     + ":"
                     + (this.getUnlocalizedName().substring(5))+i);
+        }
+    }*/
+    
+    @SideOnly(Side.CLIENT)
+    @Override
+    public void registerIcons(IconRegister par1IconRegister)
+    {
+        this.icons = new Icon[iconNames.length];
+
+        for (int i = 0; i < iconNames.length; ++i)
+        {
+            this.icons[i] = par1IconRegister.registerIcon(Reference.MOD_ID + ":" + iconNames[i]);
         }
     }
     
