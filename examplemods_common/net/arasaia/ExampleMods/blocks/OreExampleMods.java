@@ -15,6 +15,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class OreExampleMods extends BlockGeneralExampleMods{
 
     @SideOnly(Side.CLIENT)
+    private Icon[] icons;
+    @SideOnly(Side.CLIENT)
     private String[] oreNames = new String[]{"copper","silver"};
     @SideOnly(Side.CLIENT)
     private static String[] iconNames = new String[]{"oreCopper", "oreSilver"}; 
@@ -25,20 +27,6 @@ public class OreExampleMods extends BlockGeneralExampleMods{
         this.setResistance(89.5F);
         this.setStepSound(soundStoneFootstep);
     }
-    
-    @SideOnly(Side.CLIENT)
-    private Icon[] icons;
-    
-    /*@SideOnly(Side.CLIENT)
-    public void registerIcons(IconRegister par1IconRegister){
-        icons = new Icon[Reference.ORE_PICKAXE_STONE_HARVEST_TOTAL];
-        
-        for(int i = 0; i < icons.length; i++){
-            icons[i] = par1IconRegister.registerIcon(Reference.MOD_ID
-                    + ":"
-                    + (this.getUnlocalizedName().substring(5))+i);
-        }
-    }*/
     
     @SideOnly(Side.CLIENT)
     @Override
@@ -62,5 +50,12 @@ public class OreExampleMods extends BlockGeneralExampleMods{
         for(int i = 0; i < 2; i++){
             par3List.add(new ItemStack(par1, 1, i));
         }
+    }
+    
+    @SideOnly(Side.CLIENT)
+    @Override
+    public int damageDropped(int par1)
+    {
+        return par1;
     }
 }
