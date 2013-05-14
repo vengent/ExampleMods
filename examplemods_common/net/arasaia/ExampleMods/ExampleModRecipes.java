@@ -11,7 +11,11 @@ public class ExampleModRecipes {
     public static void addRecipes() {
         addFurnaceRecipes();
         addBuckets();
+        addSwords();
+        addShovels();
         addPicks();
+        addAxes();
+        addHoes();
     }
 
     private static void addFurnaceRecipes() {
@@ -48,13 +52,53 @@ public class ExampleModRecipes {
                         "ingotSilver" }));
     }
     
+    private static void addSwords(){
+        GameRegistry.addRecipe(new ShapedOreRecipe(ExampleMods.swordCopper, true,
+                new Object[] { " I ", " I ", " S ", Character.valueOf('I'),
+                        "ingotCopper", Character.valueOf('S'), Item.stick }));
+        
+        GameRegistry.addRecipe(new ShapedOreRecipe(ExampleMods.swordSilver, true,
+                new Object[] { " I ", " I ", " S ", Character.valueOf('I'),
+                        "ingotSilver", Character.valueOf('S'), Item.stick }));
+    }
+    
+    private static void addShovels(){
+        GameRegistry.addRecipe(new ShapedOreRecipe(ExampleMods.shovelCopper, true,
+                new Object[] { " I ", " S ", " S ", Character.valueOf('I'),
+                        "ingotCopper", Character.valueOf('S'), Item.stick }));
+        
+        GameRegistry.addRecipe(new ShapedOreRecipe(ExampleMods.shovelSilver, true,
+                new Object[] { " I ", " S ", " S ", Character.valueOf('I'),
+                        "ingotSilver", Character.valueOf('S'), Item.stick }));
+    }
+        
     private static void addPicks(){
-        GameRegistry.addRecipe(new ShapedOreRecipe(Item.pickaxeIron, true,
+        GameRegistry.addRecipe(new ShapedOreRecipe(ExampleMods.pickaxeCopper, true,
                 new Object[] { "III", " S ", " S ", Character.valueOf('I'),
                         "ingotCopper", Character.valueOf('S'), Item.stick }));
         
-        GameRegistry.addRecipe(new ShapedOreRecipe(Item.pickaxeGold, true,
+        GameRegistry.addRecipe(new ShapedOreRecipe(ExampleMods.pickaxeSilver, true,
                 new Object[] { "III", " S ", " S ", Character.valueOf('I'),
+                        "ingotSilver", Character.valueOf('S'), Item.stick }));
+    }
+    
+    private static void addAxes(){
+        GameRegistry.addRecipe(new ShapedOreRecipe(ExampleMods.axeCopper, true,
+                new Object[] { "II ", "IS ", " S ", Character.valueOf('I'),
+                        "ingotCopper", Character.valueOf('S'), Item.stick }));
+        
+        GameRegistry.addRecipe(new ShapedOreRecipe(ExampleMods.axeSilver, true,
+                new Object[] { "II ", "IS ", " S ", Character.valueOf('I'),
+                        "ingotSilver", Character.valueOf('S'), Item.stick }));
+    }
+    
+    private static void addHoes(){
+        GameRegistry.addRecipe(new ShapedOreRecipe(ExampleMods.hoeCopper, true,
+                new Object[] { "II ", " S ", " S ", Character.valueOf('I'),
+                        "ingotCopper", Character.valueOf('S'), Item.stick }));
+        
+        GameRegistry.addRecipe(new ShapedOreRecipe(ExampleMods.hoeSilver, true,
+                new Object[] { "II ", " S ", " S ", Character.valueOf('I'),
                         "ingotSilver", Character.valueOf('S'), Item.stick }));
     }
 }

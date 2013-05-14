@@ -1,6 +1,9 @@
 package net.arasaia.ExampleMods.lib;
 
-public class Reference {
+import net.minecraft.item.EnumToolMaterial;
+import net.minecraftforge.common.EnumHelper;
+
+public abstract class Reference {
     public static final String MOD_ID = "ExampleMods";
     public static final String MOD_NAME = "Example Mods";
     public static final String MOD_VERSION = "0.0.1";
@@ -19,12 +22,12 @@ public class Reference {
     
     // Ores per vein
     // TODO: lower copper, but show Ewicas first
-    public static final int ORE_COPPER_PER_VEIN = 16;
-    public static final int ORE_SILVER_PER_VEIN = 8;
+    public static final int ORE_COPPER_PER_VEIN = 10;
+    public static final int ORE_SILVER_PER_VEIN = 6;
     
     // Veins per chunk
-    public static final int ORE_COPPER_VEINS_PER_CHUNK = 20;
-    public static final int ORE_SILVER_VEINS_PER_CHUNK = 10;
+    public static final int ORE_COPPER_VEINS_PER_CHUNK = 12;
+    public static final int ORE_SILVER_VEINS_PER_CHUNK = 7;
     
     /******************************************************/
     
@@ -35,4 +38,26 @@ public class Reference {
     // Metadata ids for ingots
     public static final int INGOT_COPPER_META_ID = 0;
     public static final int INGOT_SILVER_META_ID = 1;
+    
+    /******************************************************/
+    
+    // Copper tools
+    public static final int SWORD_COPPER_ID = 540;
+    public static final int SHOVEL_COPPER_ID = 541;
+    public static final int PICKAXE_COPPER_ID = 542;
+    public static final int AXE_COPPER_ID = 543;
+    public static final int HOE_COPPER_ID = 544;
+    
+    // Silver tools
+    public static final int SWORD_SILVER_ID = 545;
+    public static final int SHOVEL_SILVER_ID = 546;
+    public static final int PICKAXE_SILVER_ID = 547;
+    public static final int AXE_SILVER_ID = 548;
+    public static final int HOE_SILVER_ID = 549;
+    
+    /******************************************************/
+    
+    // Tool materials
+    public static final EnumToolMaterial TOOL_MATERIAL_COPPER = EnumHelper.addToolMaterial("Copper", 1, 59, 12.0F, 1, 14);
+    public static final EnumToolMaterial TOOL_MATERIAL_SILVER = EnumHelper.addToolMaterial("Silver", 0, 40, 12.0F, 0, 22);
 }
