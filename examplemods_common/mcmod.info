@@ -4,7 +4,7 @@
 	"name":"Example Mods",
 	"description":"A mod for testing examples.",
 	"version":"0.0.1",
-	"url":"http://arasaia.net/minecraft/modding/",
+	"url":"https://github.com/magusapollo/ExampleMods/wiki",
 	"updateUrl":"",
 	"authorList":[
 		"apollo"
