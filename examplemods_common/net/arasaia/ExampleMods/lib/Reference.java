@@ -21,7 +21,6 @@ public abstract class Reference {
     public static final int ORE_SILVER_META_ID = 1;
     
     // Ores per vein
-    // TODO: lower copper, but show Ewicas first
     public static final int ORE_COPPER_PER_VEIN = 10;
     public static final int ORE_SILVER_PER_VEIN = 6;
     
