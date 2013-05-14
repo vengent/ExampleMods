@@ -8,6 +8,13 @@ public abstract class Reference {
     public static final String MOD_NAME = "Example Mods";
     public static final String MOD_VERSION = "0.0.1";
     
+    // Block data
+    public static final int BLOCK_METAL_ID = 540;
+    public static final int BLOCK_METAL_COPPER_META_ID = 0;
+    public static final int BLOCK_METAL_SILVER_META_ID = 1;
+    
+    /******************************************************/
+    
     // Ore data
     public static final int ORE_ID = 538;
     public static final int ORE_PICKAXE_STONE_HARVEST_TOTAL = 2;
@@ -41,18 +48,18 @@ public abstract class Reference {
     /******************************************************/
     
     // Copper tools
-    public static final int SWORD_COPPER_ID = 540;
-    public static final int SHOVEL_COPPER_ID = 541;
-    public static final int PICKAXE_COPPER_ID = 542;
-    public static final int AXE_COPPER_ID = 543;
-    public static final int HOE_COPPER_ID = 544;
+    public static final int SWORD_COPPER_ID = 541;
+    public static final int SHOVEL_COPPER_ID = SWORD_COPPER_ID + 1;
+    public static final int PICKAXE_COPPER_ID = SWORD_COPPER_ID + 2;
+    public static final int AXE_COPPER_ID = SWORD_COPPER_ID + 3;
+    public static final int HOE_COPPER_ID = SWORD_COPPER_ID + 4;
     
     // Silver tools
-    public static final int SWORD_SILVER_ID = 545;
-    public static final int SHOVEL_SILVER_ID = 546;
-    public static final int PICKAXE_SILVER_ID = 547;
-    public static final int AXE_SILVER_ID = 548;
-    public static final int HOE_SILVER_ID = 549;
+    public static final int SWORD_SILVER_ID = SWORD_COPPER_ID + 5;
+    public static final int SHOVEL_SILVER_ID = SWORD_COPPER_ID + 6;
+    public static final int PICKAXE_SILVER_ID = SWORD_COPPER_ID + 7;
+    public static final int AXE_SILVER_ID = SWORD_COPPER_ID + 8;
+    public static final int HOE_SILVER_ID = SWORD_COPPER_ID + 9;
     
     /******************************************************/
     

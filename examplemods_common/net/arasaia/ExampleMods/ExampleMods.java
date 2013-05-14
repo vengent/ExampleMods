@@ -2,6 +2,7 @@ package net.arasaia.ExampleMods;
 
 import net.arasaia.ExampleMods.blocks.ItemExampleModBlock;
 import net.arasaia.ExampleMods.blocks.OreExampleMods;
+import net.arasaia.ExampleMods.blocks.BlockMetalExampleMods;
 import net.arasaia.ExampleMods.items.AxeExampleMods;
 import net.arasaia.ExampleMods.items.HoeExampleMods;
 import net.arasaia.ExampleMods.items.IngotExampleMods;
@@ -37,6 +38,9 @@ public class ExampleMods {
     // ores and ingots
     public static Block oreExampleMod;
     public static Item ingotExampleMod;
+    
+    // metal blocks
+    public static Block blockMetalExampleMod;
     
     // copper tools
     public static Item swordCopper;
@@ -86,22 +90,33 @@ public class ExampleMods {
     }
     
     private void initializeBlocks() {
+        // Ore blocks
         oreExampleMod = (new OreExampleMods(Reference.ORE_ID, Material.rock))
                 .setUnlocalizedName("oreExampleMods");
+        
+        // Metal blocks
+        blockMetalExampleMod = (new BlockMetalExampleMods(Reference.BLOCK_METAL_ID, Material.iron))
+                .setUnlocalizedName("blockMetalExampleMods");
     }
 
     private void registerBlocks() {
         GameRegistry.registerBlock(oreExampleMod, ItemExampleModBlock.class,
                 Reference.MOD_ID+(oreExampleMod.getUnlocalizedName().substring(5)));
+        
+        GameRegistry.registerBlock(blockMetalExampleMod, ItemExampleModBlock.class,
+                Reference.MOD_ID+(blockMetalExampleMod.getUnlocalizedName().substring(5)));
     }
     
     private void addBlockNames() {
         LanguageRegistry.addName(new ItemStack(oreExampleMod, 1, Reference.ORE_COPPER_META_ID), "Copper Ore");
         LanguageRegistry.addName(new ItemStack(oreExampleMod, 1, Reference.ORE_SILVER_META_ID), "Silver Ore");
+        LanguageRegistry.addName(new ItemStack(blockMetalExampleMod, 1, Reference.ORE_COPPER_META_ID), "Copper Block");
+        LanguageRegistry.addName(new ItemStack(blockMetalExampleMod, 1, Reference.ORE_SILVER_META_ID), "Silver Block");
     }
     
     private void setHarvestLevels() {
-        MinecraftForge.setBlockHarvestLevel(oreExampleMod, "pickaxe", 1);        
+        MinecraftForge.setBlockHarvestLevel(oreExampleMod, "pickaxe", 1);
+        MinecraftForge.setBlockHarvestLevel(blockMetalExampleMod, "pickaxe", 1);
     }
     
     private void registerWorldGen(){
