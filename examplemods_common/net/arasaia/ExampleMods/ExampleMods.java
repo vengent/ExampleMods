@@ -1,14 +1,16 @@
 package net.arasaia.ExampleMods;
 
+import net.arasaia.ExampleMods.blocks.BlockMetalExampleMods;
 import net.arasaia.ExampleMods.blocks.ItemExampleModBlock;
 import net.arasaia.ExampleMods.blocks.OreExampleMods;
-import net.arasaia.ExampleMods.blocks.BlockMetalExampleMods;
 import net.arasaia.ExampleMods.items.AxeExampleMods;
 import net.arasaia.ExampleMods.items.HoeExampleMods;
 import net.arasaia.ExampleMods.items.IngotExampleMods;
 import net.arasaia.ExampleMods.items.PickaxeExampleMods;
+import net.arasaia.ExampleMods.items.RingNether;
 import net.arasaia.ExampleMods.items.ShovelExampleMods;
 import net.arasaia.ExampleMods.items.SwordExampleMods;
+import net.arasaia.ExampleMods.handlers.PlayerTickHandler;
 import net.arasaia.ExampleMods.lib.Reference;
 import net.arasaia.ExampleMods.worldgen.WorldGenExampleMod;
 import net.minecraft.block.Block;
@@ -26,6 +28,8 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
+import cpw.mods.fml.common.registry.TickRegistry;
+import cpw.mods.fml.relauncher.Side;
 
 @Mod(
 modid = Reference.MOD_ID,
@@ -56,9 +60,13 @@ public class ExampleMods {
     public static Item axeSilver;
     public static Item hoeSilver;
     
+    // rings
+    public static Item ringNether;
+    
     @PreInit
     public void preInit(FMLPreInitializationEvent event){
-        
+        // TODO: straighten up server/client handlers
+        TickRegistry.registerTickHandler(new PlayerTickHandler(),  Side.CLIENT);
     }
     
     @Init
@@ -73,7 +81,8 @@ public class ExampleMods {
         // Items
         this.initializeItems();
         this.initializeTools();
-        this.registerItems(); // nothing at the moment
+        this.initializeArmor();
+        this.registerItems();
         this.addItemNames();
         
         // Ore dictionary registration
@@ -125,6 +134,7 @@ public class ExampleMods {
     
     private void initializeItems(){
         ingotExampleMod = new IngotExampleMods(Reference.INGOT_ID);
+        ringNether = new RingNether(Reference.RING_ID);
     }
     
     private void initializeTools(){
@@ -206,13 +216,20 @@ public class ExampleMods {
         MinecraftForge.setToolClass(axeSilver, "axe", 1);
     }
     
+    private void initializeArmor(){
+        // TODO: initializeArmor()
+    }
+    
     private void registerItems(){
+        
     }
     
     private void addItemNames(){
+        // Ingots
         LanguageRegistry.addName(new ItemStack(ingotExampleMod, 1, Reference.INGOT_COPPER_META_ID), "Copper Ingot");
         LanguageRegistry.addName(new ItemStack(ingotExampleMod, 1, Reference.INGOT_SILVER_META_ID), "Silver Ingot");
         
+        // Tools
         LanguageRegistry.addName(swordCopper, "Copper Sword");
         LanguageRegistry.addName(swordSilver, "Silver Sword");
         LanguageRegistry.addName(shovelCopper, "Copper Shovel");
@@ -223,6 +240,13 @@ public class ExampleMods {
         LanguageRegistry.addName(axeSilver, "Silver Axe");
         LanguageRegistry.addName(hoeCopper, "Copper Hoe");
         LanguageRegistry.addName(hoeSilver, "Silver Hoe");
+        
+        // Rings
+        LanguageRegistry.addName(new ItemStack(ringNether, 1, Reference.RING_MINING_META_ID), "Miner's Ring");
+        LanguageRegistry.addName(new ItemStack(ringNether, 1, Reference.RING_REGEN_META_ID), "Ring of Regeneration");
+        LanguageRegistry.addName(new ItemStack(ringNether, 1, Reference.RING_SILVER_META_ID), "Silver Ring");
+        LanguageRegistry.addName(new ItemStack(ringNether, 1, Reference.RING_SPEED_META_ID), "Ring of Speed");
+        LanguageRegistry.addName(new ItemStack(ringNether, 1, Reference.RING_STRENGTH_META_ID), "Ring of Strength");
     }
     
     private void registerOreDictionaryEntries(){

@@ -17,6 +17,7 @@ public class ExampleModRecipes {
         addPicks();
         addAxes();
         addHoes();
+        addRings();
     }
 
     private static void addMetalBlocks() {
@@ -121,5 +122,40 @@ public class ExampleModRecipes {
         GameRegistry.addRecipe(new ShapedOreRecipe(ExampleMods.hoeSilver, true,
                 new Object[] { "II ", " S ", " S ", Character.valueOf('I'),
                         "ingotSilver", Character.valueOf('S'), Item.stick }));
+    }
+    
+    private static void addRings(){
+        ItemStack stackIngotSilver = new ItemStack(
+                ExampleMods.ingotExampleMod, 1,
+                Reference.INGOT_SILVER_META_ID);
+        
+        ItemStack stackRingNetherSilver = new ItemStack(
+                ExampleMods.ringNether, 1,
+                Reference.RING_SILVER_META_ID);
+        
+        ItemStack stackRingNetherMining = new ItemStack(
+                ExampleMods.ringNether, 1,
+                Reference.RING_MINING_META_ID);
+        
+        ItemStack stackRingNetherRegen = new ItemStack(
+                ExampleMods.ringNether, 1,
+                Reference.RING_REGEN_META_ID);
+        
+        ItemStack stackRingNetherSpeed = new ItemStack(
+                ExampleMods.ringNether, 1,
+                Reference.RING_SPEED_META_ID);
+        
+        ItemStack stackRingNetherStrength = new ItemStack(
+                ExampleMods.ringNether, 1,
+                Reference.RING_STRENGTH_META_ID);
+        
+        GameRegistry.addRecipe(new ShapedOreRecipe(stackRingNetherSilver, true,
+                new Object[] { "III", "I I", "III", Character.valueOf('I'),
+                        "ingotSilver" }));
+        
+        GameRegistry.addShapelessRecipe(stackRingNetherMining, stackRingNetherSilver, new ItemStack(Item.diamond), new ItemStack(Item.netherStar, 1));
+        GameRegistry.addShapelessRecipe(stackRingNetherRegen, stackRingNetherSilver, new ItemStack(Item.appleGold, 1, 1), new ItemStack(Item.netherStar, 1));
+        GameRegistry.addShapelessRecipe(stackRingNetherSpeed, stackRingNetherSilver, new ItemStack(Item.bootsDiamond), new ItemStack(Item.netherStar, 1));
+        GameRegistry.addShapelessRecipe(stackRingNetherStrength, stackRingNetherSilver, new ItemStack(Item.swordDiamond), new ItemStack(Item.netherStar, 1));
     }
 }

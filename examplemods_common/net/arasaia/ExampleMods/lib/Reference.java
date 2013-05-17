@@ -8,10 +8,7 @@ public abstract class Reference {
     public static final String MOD_NAME = "Example Mods";
     public static final String MOD_VERSION = "0.0.1";
     
-    // Block data
-    public static final int BLOCK_METAL_ID = 540;
-    public static final int BLOCK_METAL_COPPER_META_ID = 0;
-    public static final int BLOCK_METAL_SILVER_META_ID = 1;
+    
     
     /******************************************************/
     
@@ -47,6 +44,13 @@ public abstract class Reference {
     
     /******************************************************/
     
+    // Metal block data
+    public static final int BLOCK_METAL_ID = 540;
+    public static final int BLOCK_METAL_COPPER_META_ID = 0;
+    public static final int BLOCK_METAL_SILVER_META_ID = 1;
+    
+    /******************************************************/
+    
     // Copper tools
     public static final int SWORD_COPPER_ID = 541;
     public static final int SHOVEL_COPPER_ID = SWORD_COPPER_ID + 1;
@@ -59,11 +63,22 @@ public abstract class Reference {
     public static final int SHOVEL_SILVER_ID = SWORD_COPPER_ID + 6;
     public static final int PICKAXE_SILVER_ID = SWORD_COPPER_ID + 7;
     public static final int AXE_SILVER_ID = SWORD_COPPER_ID + 8;
-    public static final int HOE_SILVER_ID = SWORD_COPPER_ID + 9;
+    public static final int HOE_SILVER_ID = SWORD_COPPER_ID + 9; // 550ish
     
     /******************************************************/
     
     // Tool materials
     public static final EnumToolMaterial TOOL_MATERIAL_COPPER = EnumHelper.addToolMaterial("Copper", 1, 59, 12.0F, 1, 14);
     public static final EnumToolMaterial TOOL_MATERIAL_SILVER = EnumHelper.addToolMaterial("Silver", 0, 40, 12.0F, 0, 22);
+    
+    /******************************************************/
+    
+    // Rings
+    public static final int RING_ID = 551;
+    public static final int RING_TOTAL = 5;
+    public static final int RING_MINING_META_ID = 0;
+    public static final int RING_REGEN_META_ID = 1;
+    public static final int RING_SILVER_META_ID = 2;
+    public static final int RING_SPEED_META_ID = 3;
+    public static final int RING_STRENGTH_META_ID = 4;
 }
